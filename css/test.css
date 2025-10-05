@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+.parent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  border: 1px dotted;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.item.red {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  opacity: 1; /* робить елемент прозорим */
+
+  transform: translateX(-20px); /* може переміщати */
+
+  /* анімація перехід */
+  /* transition-property: background-color; /* елемент що хочемо анімувати */
+  /*transition-duration: 1s; за скільки часу зробити перехід */
+  /* transition-timing-function: linear; лінійно перехід відбувається */
+  /* transition-timing-function: ease-in; перехід відбувається повільно а потім пришвидшуєтья */
+  /* transition-timing-function: ease-out; буде працювати навпаки */
+  /* transition-timing-function: cubic-bezier(
+    0.23,
+    1,
+    0.32,
+    1 */
+  /* можно гратися з переходом по сайту cubic-bezier.com */
+  transition: background-color 1s, color 1ms, transform 1s, opacity 1s; /* можно написати все в одной властивості */
+}
+.item.red:hover {
+  background-color: pink;
+  color: black;
+  opacity: 0; /* робить елемент прозорим */
+  transform: translateX(0); /* браузеру легше робити цей перехід */
+}
+.item.green {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  /* transform: rotate(90deg);це в градусах */
+  /* transform: rotate(0.5turn); - це теж в градусах але 1turn-360гр.        */
+  /* animation-name: spin; /* задати ім'я анімації */
+  /* animation-duration: 1s; за який час робити перехід */
+  /* animation-delay: 5s; затримка анімації */
+  /* animation-iteration-count: infinite; повтор анімації кількість разів */
+  /* animation-timing-function: linear; перехід відбувається повільно а потім пришвидшуєтья */
+  /* animation: spin 1s infinite linear; Всі функції в одному */
+}
+
+@keyframes spin /* cтврення анімації та її ім'я(повино бути описовим */ {
+  0%/* початок */ {
+    transform: rotate(0);
+  }
+  100% /* кінець */ {
+    transform: rotate(360deg);
+  }
+}
+
+.item.blue {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  transform: scale(0.5); /* може змінювати масштаб */
+}
+.item.orange {
+  width: 150px;
+  height: 150px;
+  background-color: orange;
+  transform: skew(20deg, 20deg); /* викривлення єлементів градусами */
+}
